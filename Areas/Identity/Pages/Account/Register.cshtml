@@ -90,7 +90,7 @@
                     </div>
                 </form>
             </div>
-            @if(User.IsInRole(SD.Role_Admin)){
+            @if(!User.IsInRole(SD.Role_Admin)){
             <div class="col-md-12 p-3 text-center">
                 <section>
                     <p class="divider-text d-flex pt-3">Or</p>
@@ -140,7 +140,7 @@
                 if(selection=='Company'){
                     $('#Input_CompanyId').show();
                 }
-                else{
+                else{da
                     $('#Input_CompanyId').hide();
                 }
             })
