@@ -35,7 +35,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
             RoleManagmentVM RoleVM = new RoleManagmentVM()
             {
-                ApplicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId, includProperties: "Company"),
+                ApplicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId, includProperties: "company"),
                 RoleList = _roleManager.Roles.Select(i => new SelectListItem
                 {
                     Text = i.Name,
@@ -100,7 +100,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<ApplicationUser> objUserList = _unitOfWork.ApplicationUser.GetAll(includProperties: "Company").ToList();
+            List<ApplicationUser> objUserList = _unitOfWork.ApplicationUser.GetAll(includProperties: "company").ToList();
 
             foreach (var user in objUserList)
             {
